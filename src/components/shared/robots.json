@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_robots",
+  "info": {
+    "displayName": "Robots"
+  },
+  "options": {},
+  "attributes": {
+    "index": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "follow": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "nocache": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "noimageindex": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

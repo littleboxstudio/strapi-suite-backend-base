@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: strapi_mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: strapi
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - strapi_mariadb_data:/var/lib/mysql
+    networks:
+      - strapi_mariadb_network
+
+volumes:
+  strapi_mariadb_data:
+    driver: local
+
+networks:
+  strapi_mariadb_network:
+    driver: bridge
