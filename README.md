@@ -15,7 +15,13 @@ docker-compose up -d
 
 ### 2. Start Strapi
 
-Return to the root directory and start the Strapi development server:
+Return to the root directory and install the dependencies:
+
+```bash
+npm install
+```
+
+Start the Strapi development server:
 
 ```bash
 npm run develop
