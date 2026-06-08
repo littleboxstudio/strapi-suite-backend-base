@@ -10,12 +10,11 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: strapi
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
     ports:
       - "3306:3306"
     volumes:
       - strapi_mariadb_data:/var/lib/mysql
+      - ../database/db-base.sql:/docker-entrypoint-initdb.d/db-base.sql:ro
     networks:
       - strapi_mariadb_network
 
