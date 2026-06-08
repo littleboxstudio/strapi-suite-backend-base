@@ -4,7 +4,17 @@ This is a base installation of Strapi with a database running in Docker, designe
 
 ## Getting Started
 
-### 1. Start the Database
+### 1. Configure Environment Variables
+
+Rename the `.env.example` file to `.env`:
+
+```bash
+cp .env.example .env
+```
+
+> ⚠️ **Warning:** The values provided in `.env.example` are for local testing only. **Never use these values in production** — generate your own secrets (`APP_KEYS`, `API_TOKEN_SALT`, `ADMIN_JWT_SECRET`, `TRANSFER_TOKEN_SALT`, `JWT_SECRET`) and use strong, unique database credentials.
+
+### 2. Start the Database
 
 To start the database using Docker, navigate to the `docker` directory and run:
 
@@ -13,7 +23,17 @@ cd docker
 docker-compose up -d
 ```
 
-### 2. Start Strapi
+On the **first startup**, the container automatically imports `database/db-base.sql`, which already contains a pre-seeded database (including the admin user listed below). You don't need to set anything up manually.
+
+> ℹ️ **Note:** The SQL is only imported when the database volume is empty (first initialization). If you've already started the container before and want to re-import the data from scratch, reset the volume:
+>
+> ```bash
+> cd docker
+> docker-compose down -v
+> docker-compose up -d
+> ```
+
+### 3. Start Strapi
 
 Return to the root directory and install the dependencies:
 
@@ -27,7 +47,7 @@ Start the Strapi development server:
 npm run develop
 ```
 
-### 3. Access Admin Panel
+### 4. Access Admin Panel
 
 Access the backoffice at: http://localhost:1337/
 
