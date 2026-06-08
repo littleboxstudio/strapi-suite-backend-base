@@ -1,9 +1,11 @@
-version: '3.8'
+version: "3.8"
+
+name: littlebox-strapi-backend-base
 
 services:
   mariadb:
     image: mariadb:latest
-    container_name: strapi_mariadb
+    container_name: strapi_mariadb_base
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
