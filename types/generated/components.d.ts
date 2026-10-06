@@ -104,7 +104,7 @@ export interface SharedVerifications extends Struct.ComponentSchema {
 }
 
 declare module '@strapi/strapi' {
-  export module Public {
+  export namespace Public {
     export interface ComponentSchemas {
       'shared.authors': SharedAuthors;
       'shared.open-graph': SharedOpenGraph;
