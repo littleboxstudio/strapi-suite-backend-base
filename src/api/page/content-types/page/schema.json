@@ -13,17 +13,29 @@
   "pluginOptions": {
     "i18n": {
       "localized": true
+    },
+    "littlebox-strapi-suite": {
+      "tabs": [
+        {
+          "id": "muxgqu0jlaxffg",
+          "name": "Hero"
+        },
+        {
+          "id": "muxgqy5ieodass",
+          "name": "Content"
+        }
+      ]
     }
   },
   "attributes": {
     "title": {
       "type": "string",
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "slug": {
       "type": "customField",
@@ -32,19 +44,41 @@
           "localized": true
         }
       },
+      "customField": "plugin::littlebox-strapi-suite.ltbslug",
       "options": {
         "targetField": "title"
-      },
-      "customField": "plugin::littlebox-strapi-suite.ltbslug"
+      }
     },
     "seo": {
       "type": "component",
-      "repeatable": false,
-      "component": "shared.seo",
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
+        }
+      },
+      "component": "shared.seo",
+      "repeatable": false,
+      "required": true
+    },
+    "heroTitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "littlebox-strapi-suite": {
+          "tab": "muxgqu0jlaxffg"
+        }
+      }
+    },
+    "body": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "littlebox-strapi-suite": {
+          "tab": "muxgqy5ieodass"
         }
       }
     }

@@ -458,11 +458,41 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     i18n: {
       localized: true;
     };
+    'littlebox-strapi-suite': {
+      tabs: [
+        {
+          id: 'muxgqu0jlaxffg';
+          name: 'Hero';
+        },
+        {
+          id: 'muxgqy5ieodass';
+          name: 'Content';
+        },
+      ];
+    };
   };
   attributes: {
+    body: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+        'littlebox-strapi-suite': {
+          tab: 'muxgqy5ieodass';
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    heroTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+        'littlebox-strapi-suite': {
+          tab: 'muxgqu0jlaxffg';
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'>;
     publishedAt: Schema.Attribute.DateTime;
